@@ -1,10 +1,19 @@
 ---
+# postfix packages to be installed
 postfix_packages:
   - postfix
-postfix_ssl: yes
+
+# postfix ssl enable
+postfix_ssl: yes_
+
+# postfix ssl cert and key location
 postfix_ssl_cert: /etc/ssl/certs/ssl-cert-snakeoil.pem
 postfix_ssl_key: /etc/ssl/private/ssl-cert-snakeoil.key
+
+# postfix smtp listen address
 postfix_ssl_smtp_listen_addr: 127.0.0.1
+
+# postfix relay hosts to be configured, based on sender
 postfix_realyhosts:
   - sender: test@domain.com
     host: mail.domain.com
