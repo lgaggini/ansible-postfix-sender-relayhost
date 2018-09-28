@@ -3,8 +3,11 @@
 postfix_packages:
   - postfix
 
+# postfix hostname
+postfix_hostname: my_hostname
+
 # postfix ssl enable
-postfix_ssl: yes_
+postfix_ssl: yes
 
 # postfix ssl cert and key location
 postfix_ssl_cert: /etc/ssl/certs/ssl-cert-snakeoil.pem
