@@ -1,0 +1,13 @@
+---
+postfix_packages:
+  - postfix
+postfix_ssl: yes
+postfix_ssl_cert: /etc/ssl/certs/ssl-cert-snakeoil.pem
+postfix_ssl_key: /etc/ssl/private/ssl-cert-snakeoil.key
+postfix_ssl_smtp_listen_addr: 127.0.0.1
+postfix_realyhosts:
+  - sender: test@domain.com
+    host: mail.domain.com
+    port: 587
+    password: mypass
+

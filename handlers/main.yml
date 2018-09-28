@@ -1,0 +1,11 @@
+---
+- name: restart postfix
+  systemd: name=postfix state=restarted enabled=yes
+
+- name: postmap sender_dependent_relayhost
+  shell: postmap /etc/postfix/sender_dependent_relayhost
+  notify: restart postfix
+
+- name: postmap sasl_password
+  shell: postmap /etc/postfix/sasl_password
+  notify: restart postfix

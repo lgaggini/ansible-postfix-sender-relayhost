@@ -1,0 +1,21 @@
+---
+- name: postfix | install postfix packages
+  apt: name={{ item }} state=latest 
+  with_items: "{{ postfix_packages }}"
+
+- name: postfix | configure main.cf
+  template: src=main.cf.j2 dest=/etc/postfix/main.cf owner=root group=root mode=0644
+  notify: restart postfix
+
+- name: postfix | configure master.cf
+  template: src=master.cf.j2 dest=/etc/postfix/master.cf owner=root group=root mode=0644
+  notify: restart postfix
+
+- name: postfix | configure sender_dependent_relayhosts
+  template: src=sender_dependent_relayhost.j2 dest=/etc/postfix/sender_dependent_relayhost owner=root group=root mode=0644
+  notify: postmap sender_dependent_relayhost
+
+- name: postfix | configure sender_dependent_relayhosts passwords
+  template: src=sasl_password.j2 dest=/etc/postfix/sasl_password owner=root group=root mode=0600
+  notify: postmap sasl_password
+

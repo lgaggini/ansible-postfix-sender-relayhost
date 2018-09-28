@@ -1,0 +1,3 @@
+{% for relayhost in postfix_relayhosts %}
+{{ relayhost.sender }}	[{{ relayhost.host }}]:{{ relayhost.port }}
+{% endfor %}

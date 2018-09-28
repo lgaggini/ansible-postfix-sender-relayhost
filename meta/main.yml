@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  role_name: ansible-postfix-sender-relayhost
+  author: lgaggini
+  description: ansible-postfix-sender-relayhost is an Ansible role to install and configure postfix as a sender dependent relayhost on a debian based OS.
+  license: GPLv3
+  min_ansible_version: 2.4
+  platforms:
+   - name: Debian
+     versions:
+     - all
+   - name: Ubuntu
+     versions:
+     - all
+  galaxy_tags:
+    - system
+    - mail
