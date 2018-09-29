@@ -21,7 +21,7 @@ The configuration is done by vars listed and explained in [defaults/main.yml](ht
 ## Usage
 
 ```
-- name: bootstrap an ubuntu cloud image for dovecot
+- name: bootstrap an ubuntu cloud image for postfix
   hosts: mailserver
   vars_files:
     - group_vars/postfix.yml
